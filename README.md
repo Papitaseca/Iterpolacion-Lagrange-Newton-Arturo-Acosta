@@ -1,43 +1,44 @@
 # Interpolación: Lagrange y Diferencias Divididas de Newton
 
-Proyecto de Java para calcular el valor de un polinomio interpolador mediante dos métodos numéricos:
+Proyecto en Java que permite calcular el valor de un polinomio interpolador utilizando dos métodos numéricos:
 
-- **Lagrange:** construye la interpolación usando los polinomios base \(L_i(x)\).
-- **Newton:** calcula la tabla de diferencias divididas y evalúa el polinomio con sus coeficientes.
+- **Lagrange:** realiza la interpolación mediante los polinomios base.
+- **Newton:** utiliza una tabla de diferencias divididas para construir y evaluar el polinomio.
 
 ## Requisitos
 
 - Java JDK 8 o superior.
-- Un IDE compatible con Java (por ejemplo, IntelliJ IDEA, Eclipse, NetBeans o Visual Studio Code con Extension Pack for Java), o una terminal con `javac` y `java`.
+- Un IDE compatible con Java o una terminal que incluya `javac` y `java`.
 
 ## Estructura del proyecto
 
 ```text
-Interpolación/
+Interpolacion Lagrange Newton Arturo Acosta/
 ├── README.md
-└── src/
-    └── Interpolación/
-        ├── Main.java
-        ├── InterpolacionLagrange.java
-        └── InterpolacionNewton.java
+└── Interpolación/
+    ├── Main.java
+    ├── InterpolacionLagrange.java
+    └── InterpolacionNewton.java
 ```
 
-Los archivos declaran el paquete `Interpolación`. Si se compilan desde la carpeta que contiene ese directorio, conserva la carpeta y el nombre del paquete tal como aparecen.
+Los archivos Java pertenecen al paquete `Interpolación`. Es importante conservar el nombre de la carpeta y del paquete.
 
 ## Compilar y ejecutar desde la terminal
 
-Desde la carpeta raíz del proyecto, ejecuta:
+Abre una terminal en la carpeta raíz del proyecto y ejecuta:
 
 ```bash
-javac -encoding UTF-8 -d out src/Interpolación/*.java
+javac -encoding UTF-8 -d out "Interpolación"/*.java
 java -cp out Interpolación.Main
 ```
 
-En algunos entornos puede ser necesario que la codificación de la terminal sea UTF-8. También puedes abrir la carpeta del proyecto en un IDE, marcarla como raíz de fuentes y ejecutar la clase `Main`.
+El primer comando compila los archivos y guarda las clases generadas en la carpeta `out`. El segundo ejecuta el programa principal.
+
+También puedes abrir el proyecto desde un IDE compatible con Java y ejecutar la clase `Main`.
 
 ## Datos de prueba
 
-El programa utiliza los puntos:
+El programa utiliza los siguientes puntos:
 
 | x | f(x) |
 |---:|---:|
@@ -45,9 +46,9 @@ El programa utiliza los puntos:
 | 2.0 | 3.0 |
 | 4.0 | 10.0 |
 
-Evalúa ambos polinomios en `x = 3.0`, imprime la tabla de diferencias divididas de Newton y muestra los resultados para compararlos.
+Ambos métodos evalúan el polinomio en `x = 3.0`. El programa muestra la tabla de diferencias divididas de Newton, los coeficientes del polinomio y los resultados de ambos métodos.
 
-Resultado esperado, con pequeñas variaciones posibles por precisión decimal:
+Resultado esperado:
 
 ```text
 Lagrange: P(3.00) = 5.666667
@@ -57,14 +58,10 @@ Diferencia absoluta: 0.000000000000
 
 ## Validaciones
 
-Los métodos verifican que los arreglos no sean nulos ni estén vacíos, que tengan la misma longitud y que no existan nodos `x` repetidos. En caso de incumplimiento se lanza `IllegalArgumentException`.
+Los métodos comprueban que los arreglos no sean nulos ni estén vacíos, que tengan la misma cantidad de elementos y que no existan valores repetidos en los nodos `x`. Si alguna condición no se cumple, se genera una excepción `IllegalArgumentException`.
 
 ## Descripción de las clases
 
-- `InterpolacionLagrange.java`: implementa la evaluación del polinomio de Lagrange. La productoria de cada base se calcula con `(xEval - x[j]) / (x[i] - x[j])` para cada `j` distinto de `i`.
-- `InterpolacionNewton.java`: genera la tabla de diferencias divididas, evalúa el polinomio de Newton e imprime la tabla.
-- `Main.java`: define los datos de prueba, ejecuta ambos métodos y compara sus resultados.
-
-## Autoría
-
-Completa este apartado con tu nombre, grupo y datos académicos antes de publicar el repositorio.
+- **`Main.java`:** contiene los datos de prueba, ejecuta los dos métodos y compara sus resultados.
+- **`InterpolacionLagrange.java`:** implementa el método de interpolación de Lagrange.
+- **`InterpolacionNewton.java`:** calcula la tabla de diferencias divididas, evalúa el polinomio de Newton e imprime la tabla en consola.

@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Interpolacion Lagrange Newton Arturo Acosta:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Interpolacion_Lagrange_Newton_Arturo_Acosta_jar</output-path>
+    <root id="archive" name="Interpolacion Lagrange Newton Arturo Acosta.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
